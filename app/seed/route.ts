@@ -25,6 +25,7 @@ async function seedUsers() {
       `;
     }),
   );
+  console.log("Created users");
 
   return insertedUsers;
 }
@@ -51,6 +52,7 @@ async function seedInvoices() {
       `,
     ),
   );
+  console.log("Created invoices");
 
   return insertedInvoices;
 }
@@ -76,6 +78,7 @@ async function seedCustomers() {
       `,
     ),
   );
+  console.log("Created customers");
 
   return insertedCustomers;
 }
@@ -97,6 +100,7 @@ async function seedRevenue() {
       `,
     ),
   );
+  console.log("Created revenue");
 
   return insertedRevenue;
 }
@@ -104,10 +108,10 @@ async function seedRevenue() {
 export async function GET() {
   try {
     const result = await sql.begin((sql) => [
-      seedUsers(),
-      seedCustomers(),
+      //seedUsers(),
+      //seedCustomers(),
       seedInvoices(),
-      seedRevenue(),
+      //seedRevenue(),
     ]);
 
     return Response.json({ message: 'Database seeded successfully' });
